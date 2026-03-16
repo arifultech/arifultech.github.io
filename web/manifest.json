@@ -1,7 +1,7 @@
 {
     "name": "protfolio_website",
     "short_name": "protfolio_website",
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
