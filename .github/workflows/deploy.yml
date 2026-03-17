@@ -5,22 +5,33 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.x'
+          flutter-version: '3.22.0'
+          cache: true
 
-      - run: flutter pub get
+      - name: Enable Web
+        run: flutter config --enable-web
 
-      - run: flutter build web --release
+      - name: Install dependencies
+        run: flutter pub get
 
-      - name: Deploy
+      - name: Build Web
+        run: flutter build web --release
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
