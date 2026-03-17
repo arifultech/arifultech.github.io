@@ -2,8 +2,17 @@ import '../model/skill_model.dart';
 
 const List<Skill> mobileSkills = [
   // Core
-  Skill(name: "Flutter", icon: "", level: 0.9),
-  Skill(name: "Dart", icon: "", level: 0.85),
+  Skill(
+    name: "Flutter",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+    level: 0.9,
+  ),
+
+  Skill(
+    name: "Dart",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg",
+    level: 0.85,
+  ),
 
   // State Management
   Skill(name: "Provider", icon: "", level: 0.8),
@@ -27,14 +36,14 @@ Skill(name: "Push Notification", icon: "", level: 0.8),];
   // Firebase & Storage
 
 const List<Skill> Advance=[
-  Skill(name: "Method Channel", icon: "", level: 0.7),
-Skill(name: "Event Channel", icon: "", level: 0.7),
-Skill(name: "Isolates", icon: "", level: 0.7),
+  Skill(name: "Method Channel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg", level: 0.7),
+Skill(name: "Event Channel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg", level: 0.7),
+Skill(name: "Isolates", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg", level: 0.7),
 
 // Monetization
-Skill(name: "In-App Purchase", icon: "", level: 0.75),
-Skill(name: "Subscription", icon: "", level: 0.75),
-Skill(name: "AdMob", icon: "", level: 0.7),];
+Skill(name: "In-App Purchase", icon: "https://avatars.githubusercontent.com/u/34685778?s=200&v=4", level: 0.75),
+Skill(name: "Subscription", icon: "https://avatars.githubusercontent.com/u/34685778?s=200&v=4", level: 0.75),
+Skill(name: "AdMob", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg", level: 0.7),];
 // Advanced Flutter 🔥
 
 
@@ -52,10 +61,10 @@ const List<Skill> backendSkills = [
     level: 0.75,
   ),
 
-  Skill(name: "SQFLite", icon: "assets/icons/database.svg", level: 0.75),
+  Skill(name: "SQFLite", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg", level: 0.75),
   Skill(name: "SharedPreferences", icon: "assets/icons/storage.svg", level: 0.8),
 
-  Skill(name: "JSON Parsing", icon: "assets/icons/json.svg", level: 0.8),
+  Skill(name: "JSON Parsing", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg", level: 0.8),
   Skill(
     name: ".NET",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
@@ -99,24 +108,25 @@ const List<Skill> toolsSkills = [
 
   Skill(
     name: "Android Studio",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg",
     level: 0.9,
   ),
 
   Skill(
-    name: "VS code",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+    name: "VS Code",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
     level: 0.7,
   ),
 
   Skill(
-    name: "Visual studio",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+    name: "Visual Studio",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg",
     level: 0.7,
   ),
+
   Skill(
-    name: "profiling tools",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg",
+    name: "Profiling Tools",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg",
     level: 0.7,
   ),
 ];

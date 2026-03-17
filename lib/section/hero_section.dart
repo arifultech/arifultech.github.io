@@ -96,15 +96,59 @@ class HeroSection extends StatelessWidget {
     return Column(
       children: [
 
-        const CircleAvatar(
-          radius: 80,
-          backgroundImage: AssetImage("assets/image/pic2.jpg"),
-          ),
+        /// 🔥 Animated Profile Section
+        SizedBox(
+          height: 280,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
 
+              /// Outer Glow Ring
+              Container(
+                width: 260,
+                height: 260,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.blue.withOpacity(0.2),
+                    width: 2,
+                  ),
+                ),
+              ),
+
+              /// Animated Circle
+              animatedCircle(170, Colors.blue.withOpacity(0.2)),
+
+              /// Profile Image
+              Container(
+                width: 160,
+                height: 160,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: const DecorationImage(
+                    image: AssetImage("assets/image/pic2.jpg"),
+                    fit: BoxFit.cover,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blue.withOpacity(0.5),
+                      blurRadius: 50,
+                      spreadRadius: 5,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
 
         const SizedBox(height: 30),
 
-        heroText(),
+        /// 🔥 Text Section
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: heroText(),
+        ),
       ],
     );
   }
