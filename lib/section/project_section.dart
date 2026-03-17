@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import '../widget/projectCard.dart';
 
+import '../Pages/ProjectDetailsPage.dart';
+import '../data/Project_data.dart';
+import '../widget/projectCard.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -9,7 +11,7 @@ class ProjectsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 80),
+      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
       child: Column(
         children: [
 
@@ -21,53 +23,59 @@ class ProjectsSection extends StatelessWidget {
             ),
           ).animate().fadeIn().slideY(begin: 3),
 
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
 
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 20,
-            children: [
+          LayoutBuilder(
+            builder: (context, constraints) {
 
-              const ProjectCard(
-                title: "Chat App",
-                description: "Realtime chat application",
-                image:
-                "https://cdn-icons-png.flaticon.com/512/9068/9068672.png",
-              ).animate().fadeIn(delay: 200.ms).scale(),
-              SizedBox(width: 10,),
-              const ProjectCard(
-                title: "Ecommerce",
-                description: "Online shopping application",
-                image:
-                "https://cdn-icons-png.flaticon.com/512/3144/3144456.png",
-              ).animate().fadeIn(delay: 400.ms).scale(),
+              int crossAxisCount;
 
+              if (constraints.maxWidth < 600) {
+                crossAxisCount = 2; // 📱 mobile
+              } else if (constraints.maxWidth < 1000) {
+                crossAxisCount = 3; // 💻 tablet
+              } else {
+                crossAxisCount = 5; // 🖥 desktop
+              }
 
-              const ProjectCard(
-                title: "Ecommerce",
-                description: "Online shopping application",
-                image:
-                "https://cdn-icons-png.flaticon.com/512/3144/3144456.png",
-              ).animate().fadeIn(delay: 400.ms).scale(),
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: projects.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: crossAxisCount,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  // 🔥 card height control
+                  childAspectRatio:
+                  constraints.maxWidth < 600 ? 1.1 : 1,
+                ),
 
-
-              const ProjectCard(
-                title: "Ecommerce",
-                description: "Online shopping application",
-                image:
-                "https://cdn-icons-png.flaticon.com/512/3144/3144456.png",
-              ).animate().fadeIn(delay: 400.ms).scale(),
-
-
-              const ProjectCard(
-                title: "Ecommerce",
-                description: "Online shopping application",
-                image:
-                "https://cdn-icons-png.flaticon.com/512/3144/3144456.png",
-              ).animate().fadeIn(delay: 400.ms).scale(),
-
-            ],
-          )
+                itemBuilder: (context, index) {
+                  final project = projects[index];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              ProjectDetailsPage(project: project),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ProjectCard(
+                        title: project.title,
+                        description: project.description,
+                        image: project.image,
+                      ).animate().fadeIn().scale(),
+                    ),
+                  );
+                },
+              );
+            },
+          ),
         ],
       ),
     );

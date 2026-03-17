@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../widget/animated_circle.dart';
 
 class HeroSection extends StatelessWidget {
-  const HeroSection({super.key});
+  final GlobalKey projectKey;
+
+  const HeroSection({super.key, required this.projectKey});
+
+  void scrollToSection(GlobalKey key) {
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(milliseconds: 600),
+      curve: Curves.easeInOut,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,39 +24,69 @@ class HeroSection extends StatelessWidget {
     bool isMobile = MediaQuery.of(context).size.width < 800;
 
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 120, horizontal: 40),
+
+      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 40),
       child: isMobile ? mobileLayout() : desktopLayout(),
     );
   }
 
   Widget desktopLayout() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Stack(
       children: [
 
-        Expanded(
-            flex: 1,
-            child: heroText()),
 
-        Expanded(flex: 2,
-          child:Container(
-            width: 400,
-            height: 400,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage("assets/image/pic2.jpg"),
-                fit: BoxFit.scaleDown,
+        /// 🔥 Main Content
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+
+            Expanded(flex: 1, child: heroText()),
+
+            Expanded(
+              flex: 1,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+
+                  /// Glow Ring
+                  Container(
+                    width: 420,
+                    height: 420,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.blue.withOpacity(0.2),
+                        width: 2,
+                      ),
+                    ),
+                  ),
+
+                  /// Animated Glow
+                  animatedCircle(300, Colors.blue.withOpacity(0.2)),
+
+                  /// Profile Image
+                  Container(
+                    width: 300,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: const DecorationImage(
+                        image: AssetImage("assets/image/pic2.jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blue.withOpacity(0.5),
+                          blurRadius: 40,
+                          spreadRadius: 5,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.blue.withOpacity(0.4),
-                  blurRadius: 30,
-                  spreadRadius: 5,
-                )
-              ],
             ),
-          )
+          ],
         ),
       ],
     );
@@ -55,10 +98,9 @@ class HeroSection extends StatelessWidget {
 
         const CircleAvatar(
           radius: 80,
-          backgroundImage: NetworkImage(
-            "https://i.pravatar.cc/300",
+          backgroundImage: AssetImage("assets/image/pic2.jpg"),
           ),
-        ),
+
 
         const SizedBox(height: 30),
 
@@ -87,6 +129,7 @@ class HeroSection extends StatelessWidget {
           style: TextStyle(
             fontSize: 48,
             fontWeight: FontWeight.bold,
+            letterSpacing: 1.2,
           ),
         ),
 
@@ -97,7 +140,7 @@ class HeroSection extends StatelessWidget {
           animatedTexts: [
 
             TypewriterAnimatedText(
-              "Flutter Developer",
+              "Flutter IOS Developer",
               textStyle: const TextStyle(
                 fontSize: 28,
                 color: Colors.blue,
@@ -122,6 +165,17 @@ class HeroSection extends StatelessWidget {
               ),
               speed: const Duration(milliseconds: 80),
             ),
+
+            TypewriterAnimatedText(
+              "Desktop applicaton Developer",
+              textStyle: const TextStyle(
+                fontSize: 28,
+                color: Colors.blue,
+              ),
+              speed: const Duration(milliseconds: 80),
+            ),
+
+
           ],
         ),
 
@@ -135,40 +189,7 @@ class HeroSection extends StatelessWidget {
 
 
         /// FLUTTER BADGE
-        Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
-          ),
-          decoration: BoxDecoration(
-            color: Colors.blue.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: Colors.blue,
-            ),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: const [
 
-              Icon(
-                Icons.flutter_dash,
-                color: Colors.blue,
-              ),
-
-              SizedBox(width: 8),
-              SizedBox(width: 8),
-              Text(
-                "Built with Flutter Web",
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
-          ),
-        ),
 
       ],
     );
@@ -192,34 +213,44 @@ class HeroSection extends StatelessWidget {
             vertical: 16,
           ),
         ),
-        onPressed: () {},
+        onPressed: () => scrollToSection(projectKey),
         child: const Text("View Projects"),
       ),
     );
   }
 
   Widget socialIcons() {
+    Future<void> openUrl(String url) async {
+      final Uri uri = Uri.parse(url);
+      await launchUrl(uri);
+    }
     return Row(
-      children: const [
+      children: [
 
-        Icon(
-          FontAwesomeIcons.github,
-          size: 28,
+        InkWell(
+          onTap: () {
+            openUrl("https://github.com/arifultech");
+          },
+          child: const Icon(
+            FontAwesomeIcons.github,
+            size: 28,
+          ),
         ),
 
-        SizedBox(width: 20),
+        const SizedBox(width: 30),
 
-        Icon(
-          FontAwesomeIcons.linkedin,
-          size: 28,
-        ),
+         InkWell(onTap: () {
+           openUrl("https://linkedin.com/in/Softdev.Ariful");
+         },
+           child: Icon(
+            FontAwesomeIcons.linkedin,
+            size: 28,
+                   ),
+         ),
 
-        SizedBox(width: 20),
+        const SizedBox(width: 20),
 
-        Icon(
-          FontAwesomeIcons.twitter,
-          size: 28,
-        ),
+
       ],
     );
   }
