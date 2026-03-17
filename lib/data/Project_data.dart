@@ -13,9 +13,7 @@ const List<Project> projects = [
     githubUrl: "https://github.com/arifultech",
 
     screenshots: [
-      "assets/projects/chat1.png",
-      "assets/projects/chat2.png",
-      "assets/projects/chat3.png",
+
     ],
 
     features: [
@@ -42,7 +40,7 @@ const List<Project> projects = [
 
     screenshots: [
       "assets/Project_photo/okr/Okr.jpeg",
-      "assets/projects/shop2.png",
+
     ],
 
     features: [
@@ -67,7 +65,7 @@ const List<Project> projects = [
 
     screenshots: [
       "assets/Project_photo/okr/Okr.jpeg",
-      "assets/projects/shop2.png",
+
     ],
 
     features: [
@@ -93,7 +91,7 @@ const List<Project> projects = [
 
     screenshots: [
       "assets/Project_photo/okr/Okr.jpeg",
-      "assets/projects/shop2.png",
+
     ],
 
     features: [
@@ -118,7 +116,7 @@ const List<Project> projects = [
 
     screenshots: [
       "assets/Project_photo/okr/Okr.jpeg",
-      "assets/projects/shop2.png",
+
     ],
 
     features: [
@@ -143,7 +141,7 @@ const List<Project> projects = [
 
     screenshots: [
       "assets/Project_photo/okr/Okr.jpeg",
-      "assets/projects/shop2.png",
+
     ],
 
     features: [
@@ -168,7 +166,7 @@ const List<Project> projects = [
 
     screenshots: [
       "assets/Project_photo/okr/Okr.jpeg",
-      "assets/projects/shop2.png",
+
     ],
 
     features: [
@@ -193,7 +191,7 @@ const List<Project> projects = [
 
     screenshots: [
       "assets/Project_photo/okr/Okr.jpeg",
-      "assets/projects/shop2.png",
+
     ],
 
     features: [

@@ -2,22 +2,22 @@ import '../model/skill_model.dart';
 
 const List<Skill> mobileSkills = [
   // Core
-  Skill(name: "Flutter", icon: "assets/icons/flutter.svg", level: 0.9),
-  Skill(name: "Dart", icon: "assets/icons/dart.svg", level: 0.85),
+  Skill(name: "Flutter", icon: "", level: 0.9),
+  Skill(name: "Dart", icon: "", level: 0.85),
 
   // State Management
-  Skill(name: "Provider", icon: "assets/icons/provider.svg", level: 0.8),
-  Skill(name: "BLoC", icon: "assets/icons/bloc.svg", level: 0.75),
-  Skill(name: "Getx", icon: "assets/icons/bloc.svg", level: 0.75),
-  Skill(name: "MVVM", icon: "assets/icons/bloc.svg", level: 0.75),
-  Skill(name: "Clean Architecture", icon: "assets/icons/bloc.svg", level: 0.75),
-  Skill(name: "State Optimization", icon: "assets/icons/bloc.svg", level: 0.75),
+  Skill(name: "Provider", icon: "", level: 0.8),
+  Skill(name: "BLoC", icon: "", level: 0.75),
+  Skill(name: "Getx", icon: "", level: 0.75),
+  Skill(name: "MVVM", icon: "", level: 0.75),
+  Skill(name: "Clean Architecture", icon: "", level: 0.75),
+  Skill(name: "State Optimization", icon: "", level: 0.75),
 ];
 
-  const List<Skill> Features=[  Skill(name: "Responsive and Adaptive UI", icon: "assets/icons/ui.svg", level: 0.85),
-Skill(name: "Animations", icon: "assets/icons/animation.svg", level: 0.8),
-Skill(name: "Cloud Massaging", icon: "assets/icons/animation.svg", level: 0.8),
-Skill(name: "Push Notification", icon: "assets/icons/animation.svg", level: 0.8),];
+  const List<Skill> Features=[  Skill(name: "Responsive and Adaptive UI", icon: "", level: 0.85),
+Skill(name: "Animations", icon: "", level: 0.8),
+Skill(name: "Cloud Massaging", icon: "", level: 0.8),
+Skill(name: "Push Notification", icon: "", level: 0.8),];
   // UI & UX
 
 
@@ -27,14 +27,14 @@ Skill(name: "Push Notification", icon: "assets/icons/animation.svg", level: 0.8)
   // Firebase & Storage
 
 const List<Skill> Advance=[
-  Skill(name: "Method Channel", icon: "assets/icons/api.svg", level: 0.7),
-Skill(name: "Event Channel", icon: "assets/icons/api.svg", level: 0.7),
-Skill(name: "Isolates", icon: "assets/icons/performance.svg", level: 0.7),
+  Skill(name: "Method Channel", icon: "", level: 0.7),
+Skill(name: "Event Channel", icon: "", level: 0.7),
+Skill(name: "Isolates", icon: "", level: 0.7),
 
 // Monetization
-Skill(name: "In-App Purchase", icon: "assets/icons/payment.svg", level: 0.75),
-Skill(name: "Subscription", icon: "assets/icons/subscription.svg", level: 0.75),
-Skill(name: "AdMob", icon: "assets/icons/admob.svg", level: 0.7),];
+Skill(name: "In-App Purchase", icon: "", level: 0.75),
+Skill(name: "Subscription", icon: "", level: 0.75),
+Skill(name: "AdMob", icon: "", level: 0.7),];
 // Advanced Flutter 🔥
 
 

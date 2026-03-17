@@ -81,7 +81,7 @@ class _SkillCardState extends State<_SkillCard> {
             // Top Row (Icon + Name)
             Row(
               children: [
-                SvgPicture.asset(
+                SvgPicture.network(
                   widget.skill.icon,
                   width: 16,
                   height: 16,
