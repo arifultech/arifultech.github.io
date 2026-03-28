@@ -54,7 +54,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 ),
               ),
 
-              SizedBox(height: isMobile ? 3 : 9),
+              SizedBox(height: isMobile ? 2 : 9),
 
               // 🔥 Title
               Text(
@@ -62,7 +62,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  fontSize: isMobile ? 12 : 14, // 🔽 mobile smaller
+                  fontSize: isMobile ? 10 : 14, // 🔽 mobile smaller
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -75,7 +75,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 maxLines: isMobile ? 1 : 2, // 🔥 mobile 1 line only
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  fontSize: isMobile ? 11 : 11,
+                  fontSize: isMobile ? 9 : 11,
                   color: Colors.grey[400],
                 ),
               ),
@@ -91,7 +91,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     "View",
                     style: TextStyle(
                       color: Colors.blueAccent,
-                      fontSize: isMobile ? 10 : 13,
+                      fontSize: isMobile ? 9 : 13,
                     ),
                   ),
 

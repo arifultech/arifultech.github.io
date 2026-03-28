@@ -59,9 +59,7 @@ class AboutSection extends StatelessWidget {
               color: Colors.grey[300],
             ),
           )
-              .animate()
-              .fadeIn(delay: 300.ms)
-              .slideY(begin: 0.6),
+
         ],
       ),
     );

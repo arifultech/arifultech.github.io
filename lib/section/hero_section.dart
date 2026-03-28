@@ -21,16 +21,16 @@ class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    bool isMobile = MediaQuery.of(context).size.width < 800;
+    bool isMobile = MediaQuery.of(context).size.width < 600;
 
     return Container(
 
       padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 40),
-      child: isMobile ? mobileLayout() : desktopLayout(),
+      child: isMobile ? mobileLayout(context) : desktopLayout(context),
     );
   }
 
-  Widget desktopLayout() {
+  Widget desktopLayout(context) {
     return Stack(
       children: [
 
@@ -40,7 +40,7 @@ class HeroSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
 
-            Expanded(flex: 1, child: heroText()),
+            Expanded(flex: 1, child: heroText(context)),
 
             Expanded(
               flex: 1,
@@ -92,7 +92,7 @@ class HeroSection extends StatelessWidget {
     );
   }
 
-  Widget mobileLayout() {
+  Widget mobileLayout(context) {
     return Column(
       children: [
 
@@ -146,14 +146,16 @@ class HeroSection extends StatelessWidget {
 
         /// 🔥 Text Section
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: heroText(),
+          padding:  EdgeInsets.symmetric(horizontal: 20),
+          child: heroText(context),
         ),
       ],
     );
   }
 
-  Widget heroText() {
+  Widget heroText(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).size.width < 600;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -168,10 +170,10 @@ class HeroSection extends StatelessWidget {
 
         const SizedBox(height: 10),
 
-        const Text(
+         Text(
           "Ariful Islam",
           style: TextStyle(
-            fontSize: 48,
+            fontSize: isMobile?32:48,
             fontWeight: FontWeight.bold,
             letterSpacing: 1.2,
           ),
@@ -180,12 +182,11 @@ class HeroSection extends StatelessWidget {
         const SizedBox(height: 20),
 
         SizedBox(
-          width: 400,
+          width: isMobile ? double.infinity : 380, // 🔥 responsive width
           child: DefaultTextStyle(
-            style: const TextStyle(
-              fontSize: 28,
+            style: TextStyle(
+              fontSize: isMobile ? 20 : 28,
               color: Colors.blue,
-              overflow: TextOverflow.visible,
             ),
             child: AnimatedTextKit(
               repeatForever: true,
@@ -193,8 +194,9 @@ class HeroSection extends StatelessWidget {
                 TypewriterAnimatedText(
                   "Mobile App Developer",
                   speed: const Duration(milliseconds: 90),
-                ), TypewriterAnimatedText(
-                  "Flutter web Developer",
+                ),
+                TypewriterAnimatedText(
+                  "Flutter Web Developer",
                   speed: const Duration(milliseconds: 90),
                 ),
               ],
@@ -209,11 +211,6 @@ class HeroSection extends StatelessWidget {
         const SizedBox(height: 30),
 
         socialIcons(),
-
-
-        /// FLUTTER BADGE
-
-
       ],
     );
   }

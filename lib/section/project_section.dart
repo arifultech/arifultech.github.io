@@ -44,11 +44,11 @@ class ProjectsSection extends StatelessWidget {
                 itemCount: projects.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: crossAxisCount,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+                  crossAxisSpacing: constraints.maxWidth < 600 ?5:10,
+                  mainAxisSpacing: constraints.maxWidth < 600 ?5:10,
                   // 🔥 card height control
                   childAspectRatio:
-                  constraints.maxWidth < 600 ? 1.2 : 1,
+                  constraints.maxWidth < 600 ? 0.9 : 1,
                 ),
 
                 itemBuilder: (context, index) {
