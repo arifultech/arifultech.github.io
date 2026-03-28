@@ -175,7 +175,7 @@ class ProjectDetailsPage extends StatelessWidget {
                 return ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    "assets/Project_photo/okr/Okr.jpeg",
+                    img,
                     width: 250,
                     height: 400,
                     fit: BoxFit.fitHeight,

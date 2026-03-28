@@ -54,7 +54,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 ),
               ),
 
-              SizedBox(height: isMobile ? 5 : 9),
+              SizedBox(height: isMobile ? 3 : 9),
 
               // 🔥 Title
               Text(
@@ -67,7 +67,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 ),
               ),
 
-              SizedBox(height: isMobile ? 4 : 4),
+              SizedBox(height: isMobile ? 2 : 4),
 
               // 🔥 Description
               Text(
@@ -80,7 +80,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 ),
               ),
 
-              SizedBox(height: isMobile ? 6 : 10),
+              SizedBox(height: isMobile ? 3 : 10),
 
               // 🔥 Action Row (mobile compact)
               Row(
@@ -91,13 +91,13 @@ class _ProjectCardState extends State<ProjectCard> {
                     "View",
                     style: TextStyle(
                       color: Colors.blueAccent,
-                      fontSize: isMobile ? 11 : 13,
+                      fontSize: isMobile ? 10 : 13,
                     ),
                   ),
 
                   Icon(
                     Icons.arrow_forward_ios,
-                    size: isMobile ? 10 : 12,
+                    size: isMobile ? 8 : 12,
                     color: Colors.blueAccent,
                   )
                 ],

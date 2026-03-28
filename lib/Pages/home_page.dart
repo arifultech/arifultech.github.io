@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // 🔥 এখানে Drawer দিবে
-      endDrawer: Drawer(
+      endDrawer: Drawer(width: 150,
         backgroundColor: const Color(0xff0f172a),
         child: Builder( // 🔥 IMPORTANT
           builder: (context) {
@@ -41,10 +41,15 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 80),
 
                 _drawerItem(context, "Home", () => scrollToSection(heroKey)),
+                Divider(),
                 _drawerItem(context, "About", () => scrollToSection(aboutKey)),
+                Divider(),
                 _drawerItem(context, "Skills", () => scrollToSection(skillkey)),
+                Divider(),
                 _drawerItem(context, "Experience", () => scrollToSection(experiencekey)),
+                Divider(),
                 _drawerItem(context, "Projects", () => scrollToSection(projectKey)),
+                Divider(),
                 _drawerItem(context, "Contact", () => scrollToSection(contactKey)),
               ],
             );

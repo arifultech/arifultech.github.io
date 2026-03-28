@@ -48,7 +48,7 @@ class ProjectsSection extends StatelessWidget {
                   mainAxisSpacing: 10,
                   // 🔥 card height control
                   childAspectRatio:
-                  constraints.maxWidth < 600 ? 1.1 : 1,
+                  constraints.maxWidth < 600 ? 1.2 : 1,
                 ),
 
                 itemBuilder: (context, index) {

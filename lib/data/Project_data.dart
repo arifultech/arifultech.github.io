@@ -6,13 +6,16 @@ const List<Project> projects = [
   Project(
     title: "Jogajog App",
     description: "Realtime messaging And Communication application",
-    image: "https://www.appbrain.com/share-img?pkg=com.gtr.jogajog&width=764&height=400&maxCacheSeconds=3600",
+    image: "https://media.assettype.com/eisamay%2Fimport%2Fthumb%2F84974989%2F84974989.jpg",
 
     videoUrl: "https://youtube.com/demo",
 
     githubUrl: "https://github.com/arifultech",
 
     screenshots: [
+      "assets/Project_photo/Jogajog/jogajog.png",
+      "assets/Project_photo/Jogajog/jogajog2.png",
+      "assets/Project_photo/Jogajog/jogajog3.jpg"
 
     ],
 
@@ -43,7 +46,8 @@ const List<Project> projects = [
     githubUrl: "https://github.com/arifultech",
 
     screenshots: [
-      "assets/Project_photo/okr/Okr.jpeg",
+      "assets/Project_photo/Ecomerce/Eccomerce11.jpg",
+      "assets/Project_photo/Ecomerce/Ecomerce2.jpg"
 
     ],
 
@@ -95,6 +99,9 @@ const List<Project> projects = [
 
     screenshots: [
       "assets/Project_photo/okr/Okr.jpeg",
+      "assets/Project_photo/okr/okr (1).jpeg",
+      "assets/Project_photo/okr/okr (2).jpeg",
+      "assets/Project_photo/okr/okr (3).jpeg"
 
     ],
 
