@@ -55,7 +55,7 @@ class ProjectDetailsPage extends StatelessWidget {
             /// MAIN IMAGE
             ClipRRect(
               borderRadius: BorderRadius.circular(16),
-              child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSahUuyeb0ky4udjOn9C483ow1Gi95jRwQySQ&s",
+              child: Image.network(project.image,
                 // project.image,
                 height: 350,
                 width: double.infinity,
