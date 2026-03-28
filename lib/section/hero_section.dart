@@ -179,48 +179,27 @@ class HeroSection extends StatelessWidget {
 
         const SizedBox(height: 20),
 
-        AnimatedTextKit(
-          repeatForever: true,
-          animatedTexts: [
-
-            TypewriterAnimatedText(
-              "Flutter IOS Developer",
-              textStyle: const TextStyle(
-                fontSize: 28,
-                color: Colors.blue,
-              ),
-              speed: const Duration(milliseconds: 80),
+        SizedBox(
+          width: 400,
+          child: DefaultTextStyle(
+            style: const TextStyle(
+              fontSize: 28,
+              color: Colors.blue,
+              overflow: TextOverflow.visible,
             ),
-
-            TypewriterAnimatedText(
-              "Mobile App Developer",
-              textStyle: const TextStyle(
-                fontSize: 28,
-                color: Colors.blue,
-              ),
-              speed: const Duration(milliseconds: 80),
+            child: AnimatedTextKit(
+              repeatForever: true,
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  "Mobile App Developer",
+                  speed: const Duration(milliseconds: 90),
+                ), TypewriterAnimatedText(
+                  "Flutter web Developer",
+                  speed: const Duration(milliseconds: 90),
+                ),
+              ],
             ),
-
-            TypewriterAnimatedText(
-              "Flutter Web Developer",
-              textStyle: const TextStyle(
-                fontSize: 28,
-                color: Colors.blue,
-              ),
-              speed: const Duration(milliseconds: 80),
-            ),
-
-            TypewriterAnimatedText(
-              "Desktop applicaton Developer",
-              textStyle: const TextStyle(
-                fontSize: 28,
-                color: Colors.blue,
-              ),
-              speed: const Duration(milliseconds: 80),
-            ),
-
-
-          ],
+          ),
         ),
 
         const SizedBox(height: 30),
